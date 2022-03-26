@@ -37,7 +37,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'mems.apps.MemsConfig'
+    'mems.apps.MemsConfig',
+    'bootstrap3',
 ]
 
 MIDDLEWARE = [
