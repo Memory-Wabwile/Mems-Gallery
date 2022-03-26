@@ -16,6 +16,7 @@ def mems_home(request):
     function to display images on the home page
     '''
 
-    return render(request, 'index.html', {'location':location, 'category': category,'pictures':pictures})
+    return render(request, 'index.html')
+    return render(request, 'index.html')
                                          
                                           
