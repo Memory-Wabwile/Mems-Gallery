@@ -4,4 +4,7 @@ from django.http  import HttpResponse
 
 # Create your views here.
 def welcome(request):
-    return HttpResponse('Welcome to the Moringa Tribune')
+    '''
+    the view function
+    '''
+    return HttpResponse('Welcome to Mems gallery')
