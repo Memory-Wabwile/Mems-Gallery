@@ -17,6 +17,6 @@ def mems_home(request):
     '''
 
     return render(request, 'index.html')
-    return render(request, 'index.html')
+    
                                          
                                           
