@@ -1,5 +1,6 @@
-from django.shortcuts import render
+from django.shortcuts import render,redirect
 from django.http  import HttpResponse
+
 
 
 
@@ -12,7 +13,7 @@ def welcome(request):
 
 def mems_home(request):
     '''
-    finction to display images on the home page
+    function to display images on the home page
     '''
 
     return render(request, 'index.html', {'location':location, 'category': category,'pictures':pictures})
