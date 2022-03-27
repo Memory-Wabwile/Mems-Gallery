@@ -1,6 +1,7 @@
 from django.shortcuts import render,redirect
-from django.http  import HttpResponse
+from django.http  import HttpResponse,Http404
 from .models import Image
+from django.core.exceptions import ObjectDoesNotExist
 
 
 
@@ -32,4 +33,12 @@ def search_results(request):
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
                                          
+def image(request, id):
+    try:
+        image = Image.objects.get(pk = id)
+
+    except ObjectDoesNotExist:
+        raise Http404()
+
+    return render(request, 'image.html', {"image": image})
                                           

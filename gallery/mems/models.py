@@ -34,7 +34,7 @@ class Category(models.Model):
         return self.name
 
 class Image(models.Model):
-  
+    image = models.ImageField(upload_to = 'images/' , null=True)
     name = models.CharField(max_length=30)
     description = models.TextField(max_length=80)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
