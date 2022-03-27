@@ -5,4 +5,20 @@
     <div class="container">
         <h1 class='text-center' > WELCOME TO MEMS GALLERY</h1>
     </div>
+
+
+     
+
+    <div class="row">
+        <h1 class="text-center">{{image.name}}</h1>
+    </div>
+
+   <div class="row">
+     <img src="{{image.image.url}}"  class="img-responsive" alt="">
+   </div>
+
+    <div class="row">
+     <p>{{image.description}}</p>
+    </div>
+
 {%endblock%}
