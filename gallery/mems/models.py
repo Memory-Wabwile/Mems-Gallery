@@ -23,6 +23,9 @@ class Category(models.Model):
 
     def save_category(self):
         self.save()
+    
+    # def update_category():
+    #     self.update()
 
     def delete_category(self):
         self.save()
@@ -43,6 +46,29 @@ class Image(models.Model):
     def delete_image(self):
         self.delete()
 
+    @classmethod
+    def highlights(cls):
+        highlights= cls.objects.order_by('category')
+        return highlights
+        
+    @classmethod
+    def get_image_by_id(cls,id):
+        image_per_id=cls.objects.filter(id = id).all()
+        return image_per_id
+
+    @classmethod
+    def search_image(cls,search_term):
+        image =cls.objects.filter(category__category_name__icontains=search_term)
+        return image
+    
+    @classmethod
+    def filter_by_location(cls,location):
+        image_per_location =cls.objects.filter(location__location_name__icontains= location)
+        print(image_per_location)
+        return image_per_location
+   
+
     def __str__(self):
+
         return
        
