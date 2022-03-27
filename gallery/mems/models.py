@@ -39,6 +39,8 @@ class Image(models.Model):
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
 
+    def __str__(self):
+        return self.name
 
     def save_image(self):
         self.save()
@@ -68,6 +70,5 @@ class Image(models.Model):
         return image_per_location
    
 
-    def __str__(self):
-        return self.name
+ 
        
