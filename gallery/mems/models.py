@@ -22,6 +22,9 @@ class Category(models.Model):
     def save_category(self):
         self.save()
 
+    def delete_category(self):
+        self.save()
+
     def __str__(self):
         return self.name
 
@@ -31,4 +34,7 @@ class Image(models.Model):
     description = models.TextField(max_length=80)
     location = models.ForeignKey(Location, on_delete=models.CASCADE)
     category = models.ForeignKey(Category,on_delete=models.CASCADE)
+
+    def __str__(self):
+        return
        
