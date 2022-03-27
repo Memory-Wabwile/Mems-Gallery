@@ -11,6 +11,13 @@ class LocationTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.nairobi , Location))
 
+    # Testing save method
+    def test_save_method(self):
+        self.nairobi.save_location()
+        # editors = Editor.objects.all()
+        # self.assertTrue(len(editors) > 0)
+
+
 
 class CategoryTestClass(TestCase):
     #setup method
