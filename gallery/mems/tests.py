@@ -1,3 +1,4 @@
+from unicodedata import category
 from django.test import TestCase
 from .models import Image,Location,Category
 
@@ -27,3 +28,25 @@ class CategoryTestClass(TestCase):
     # Testing  instance
     def test_instance(self):
         self.assertTrue(isinstance(self.food , Category))
+
+
+class ImageTestClass(TestCase):
+
+    def setUp(self):
+        # Creating a new editor and saving it
+        self.james= Location(name='nairobi')
+        self.james.save_location()
+
+        # Creating a new tag and saving it
+        self.new_category = category(name = 'testing')
+        self.new_category.save()
+       
+        self.new_image= Image(name = 'pizza',description = 'Nairobis favourite',location = self.nairobi , category = self.food)
+        self.new_image.save()
+
+        self.new_image.category.add(self.new_category)
+
+    def tearDown(self):
+        Category.objects.all().delete()
+        Location.objects.all().delete()
+        Image.objects.all().delete()
