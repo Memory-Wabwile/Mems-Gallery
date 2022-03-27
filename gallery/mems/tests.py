@@ -34,8 +34,8 @@ class ImageTestClass(TestCase):
 
     def setUp(self):
         # Creating a new editor and saving it
-        self.james= Location(name='nairobi')
-        self.james.save_location()
+        self.memory= Location(name='nairobi')
+        self.memory.save_location()
 
         # Creating a new tag and saving it
         self.new_category = category(name = 'testing')
