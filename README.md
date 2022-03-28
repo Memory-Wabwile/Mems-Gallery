@@ -8,7 +8,7 @@ https://github.com/Memory-Wabwile
 Mems Gallery is an application showcasing the different pictures in mem's gallery. Users are able to view this different pictures and even copy the urls of the images incase they want to share.
 
 ## Live Site
-click on  to view the site
+click on https://mems-gallery.herokuapp.com/ to view the site
 ## BDD
 1. A user is able to view different photos that interest me.
 2. Click on a single photo to expand it and also view the details of the photo. The photo details appear on a modal within the same route as the main page.
