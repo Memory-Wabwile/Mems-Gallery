@@ -6,22 +6,31 @@
 
 <div class="container">
     <h1 class='text-center'> WELCOME TO MEMS GALLERY</h1>
+    <p class='text-center' style=" color: green; font-size: 20px;">The various categories include food, art, wildlife,cocktails and travel</p>
+    <p class='text-center' style="font-size: 20px;"> <em>Photography takes an instant out of time, altering life by
+            holding it still.” “There are always two people in every picture: the photographer and the viewer.”
+            “Photography helps people to see.”</em></p>
 
 
     {%if image%}
     {{message}}
+    {% for image in image %}
     <div class="container">
-        <div class="row">
+
+
+
+
+        <div style="display: flex; flex-wrap: wrap; flex-direction: row; width: 100%;" class="row">
+
             <div class="col-6">
-                <div class="card border-secondary">
-                    {% for image in image %}
-                    <h1 class="text-center" >{{image.name}}</h1>
-                    <img src="{{image.image.url}}" data-toggle="modal" data-target="#{{image.id}}" alt=""
-                        class="img-fluid" id="eachimage" width="500" height="300">
-                    
-                </div>
+                <h1 class="text-center">{{image.category}}</h1>
+                <img src="{{image.image.url}}" data-toggle="modal" data-target="#{{image.id}}" alt="" class="img-fluid"
+                    id="eachimage" width="500" height="300">
             </div>
+
         </div>
+
+
     </div>
 
     <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
@@ -29,7 +38,7 @@
         <div class="modal-dialog" role="document">
             <div class="modal-content modalcard">
                 <div class="modal-header">
-                    <h5 class="modal-title" id="imagetitle">{{image.name}}</h5>
+                    <h5 style="font-size: 2em;" class="modal-title text-center" id="imagetitle">{{image.name}}</h5>
                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                         <span aria-hidden="true">&times;</span>
                     </button>

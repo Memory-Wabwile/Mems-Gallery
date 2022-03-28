@@ -18,8 +18,8 @@ def mems_home(request):
     function to display images on the home page
     '''
     image = Image.highlights()
-    message = "There's nothing to show"
-    return render(request, 'index.html' , {"image" : image , "message":message})
+    
+    return render(request, 'index.html' , {"image" : image })
     
 def search_results(request):
 
@@ -33,7 +33,24 @@ def search_results(request):
     else:
         message = "You haven't searched for any term"
         return render(request, 'search.html',{"message":message})
-                                         
+
+def search_location(request):
+
+    if 'location' in request.GET and request.GET["location"]:
+        location = request.GET.get("location")
+        search_location = Image.filter_by_location(location)
+        message = f"{location}"
+
+        return render(request, 'location.html',{"message":message,"search_location": search_location})
+
+    else:
+        message = "You haven't searched for any location"
+        return render(request, 'location.html',{"message":message})
+
+# def search_location(request,location):
+#     images = Image.filter_by_location(location)
+#     return render(request, 'location.html', {'locations': images}) 
+
 def image(request, id):
     try:
         image = Image.objects.get(pk = id)

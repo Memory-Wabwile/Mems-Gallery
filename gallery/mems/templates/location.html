@@ -1,0 +1,30 @@
+{%extends 'base.html'%}
+{% block content %}
+<div class="container">
+
+  <div class="row">
+    {% if image %}
+    <h2>Found {{ image|length }} of searched term {{message}}</h2>
+    {% else %}
+    <h2> Found 0 articles for the search term {{message}}</h2>
+    {% endif %}
+
+  </div>
+
+  <div class="row">
+
+    {% if search_location %}
+    {% for image in search_location%}
+    <h1>{{image.location}}'s Images</h1>
+    <div class="col-sm-6 col-md-6">
+      <h1 class="text-center" >{{image.name}}</h1>
+      <img style="width: 80%; height: 300px; display: block; margin: 0 auto;" src="{{image.image.url}}" alt="the image">
+      <p style="padding-left: 5%; font-size: 20px;" > Description : {{image.description}}</p>
+      <p class="text-center" style="font-size: 20px;" >Location: {{image.location}}</p>
+      <p class="text-center" style="font-size: 20px;" >Category: {{image.category}}</p>
+    </div>
+    {% endfor %}
+    {% endif %}
+  </div>
+</div>
+{% endblock %}

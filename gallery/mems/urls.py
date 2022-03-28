@@ -8,6 +8,7 @@ urlpatterns=[
     # path('',views.welcome,name = 'welcome'),
     path('' , views.mems_home, name = 'memsHome'),
     path('searched/',views.search_results,name='search_results'),
+    path('search_location/', views.search_location, name ='search_location'),
     re_path(r'^images/(\d+)',views.image,name ='image')
     
 ]
