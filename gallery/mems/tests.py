@@ -35,13 +35,24 @@ class CategoryTestClass(TestCase):
     def test_instance(self):
         self.assertTrue(isinstance(self.food , Category))
 
+    # Testing save method
+    def test_save_category(self):
+        self.food.save_category()
+        category = Category.objects.all()
+        self.assertTrue(len(category) > 0)
+
+    # Testing delete method
+    def test_delete_category(self):
+        self.food.delete_category()
+        category =Category.objects.all()
+        self.assertEqual(len(category),0)
 
 class ImageTestClass(TestCase):
 
     def setUp(self):
         # Creating a new editor and saving it
-        self.memory= Location(name='nairobi')
-        self.memory.save_location()
+        self.nairobi= Location(name='nairobi')
+        self.nairobi.save_location()
 
         # Creating a new tag and saving it
         self.new_category = category(name = 'testing')
@@ -51,6 +62,7 @@ class ImageTestClass(TestCase):
         self.new_image.save()
 
         self.new_image.category.add(self.new_category)
+
 
     def tearDown(self):
         Category.objects.all().delete()
