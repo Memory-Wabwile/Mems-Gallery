@@ -17,8 +17,9 @@ def mems_home(request):
     '''
     function to display images on the home page
     '''
-
-    return render(request, 'index.html')
+    image = Image.highlights()
+    message = "There's nothing to show"
+    return render(request, 'index.html' , {"image" : image , "message":message})
     
 def search_results(request):
 
@@ -27,7 +28,7 @@ def search_results(request):
         searched_articles = Image.search_image(search_term)
         message = f"{search_term}"
 
-        return render(request, 'search.html',{"message":message,"images": searched_articles})
+        return render(request, 'search.html',{"message":message,"image": searched_articles})
 
     else:
         message = "You haven't searched for any term"
