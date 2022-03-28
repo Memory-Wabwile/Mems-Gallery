@@ -2,9 +2,9 @@
 {%load bootstrap3}
 {% block content %}
 {{block.super}}
-<div   class="container">
+<div class="container">
 
-  <div  style="padding-left: 3%;" class="row">
+  <div style="padding-left: 3%;" class="row">
     {% if image %}
     <h2>Found {{ image|length }} of searched term {{message}}</h2>
     {% else %}
@@ -16,20 +16,18 @@
   <div class="row">
 
     {%if image%}
-    
-    <div class="container">
-      <div class="d-flex">
-        <div style="display: flex; flex-wrap: wrap; flex-direction: row; width: 100%;" class="row">
-          <div class="col-6">
-            <div class="card border-secondary">
-              {% for image in image %}
-              <h1 class="text-center">{{image.name}}</h1>
-              <img src="{{image.image.url}}" data-toggle="modal" data-target="#{{image.id}}" alt="" class="img-fluid"
-                id="eachimage" width="500" height="300">
 
-            </div>
-          </div>
+    <div class="container">
+
+      <div class="col-6">
+        <div class="card border-secondary">
+          {% for image in image %}
+          <h1 class="text-center">{{image.name}}</h1>
+          <img src="{{image.image.url}}" data-toggle="modal" data-target="#{{image.id}}" alt="" class="img-fluid"
+            id="eachimage" width="500" height="300">
+
         </div>
+
       </div>
     </div>
 

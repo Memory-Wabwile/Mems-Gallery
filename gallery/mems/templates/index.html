@@ -6,7 +6,8 @@
 
 <div class="container">
     <h1 class='text-center'> WELCOME TO MEMS GALLERY</h1>
-    <p class='text-center' style=" color: green; font-size: 20px;">The various categories include food, art, wildlife,cocktails and travel</p>
+    <p class='text-center' style=" color: green; font-size: 20px;">The various categories include food, art,
+        wildlife,cocktails and travel taken in places such as mombasa,nairobi and nakuru</p>
     <p class='text-center' style="font-size: 20px;"> <em>Photography takes an instant out of time, altering life by
             holding it still.” “There are always two people in every picture: the photographer and the viewer.”
             “Photography helps people to see.”</em></p>
@@ -14,14 +15,15 @@
 
     {%if image%}
     {{message}}
+
     {% for image in image %}
     <div class="container">
 
 
 
-
+       
         <div style="display: flex; flex-wrap: wrap; flex-direction: row; width: 100%;" class="row">
-
+            
             <div class="col-6">
                 <h1 class="text-center">{{image.category}}</h1>
                 <img src="{{image.image.url}}" data-toggle="modal" data-target="#{{image.id}}" alt="" class="img-fluid"
