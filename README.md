@@ -5,7 +5,7 @@ Memory Wabwile<br>
 https://github.com/Memory-Wabwile
 
 ## Description
-Mems Gallery iis an pplication showcasing the different pictures in mem's gallery. Users are able to view this different pictures and even copy the urls of the images incase they want to share.
+Mems Gallery is an application showcasing the different pictures in mem's gallery. Users are able to view this different pictures and even copy the urls of the images incase they want to share.
 
 ## Live Site
 click on  to view the site
