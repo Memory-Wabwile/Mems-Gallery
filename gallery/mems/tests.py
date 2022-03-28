@@ -13,10 +13,16 @@ class LocationTestClass(TestCase):
         self.assertTrue(isinstance(self.nairobi , Location))
 
     # Testing save method
-    def test_save_method(self):
+    def test_save_location(self):
         self.nairobi.save_location()
-        # editors = Editor.objects.all()
-        # self.assertTrue(len(editors) > 0)
+        location = Location.objects.all()
+        self.assertTrue(len(location) > 0)
+
+    # Testing delete method
+    def test_delete_location(self):
+        self.nairobi.delete_location()
+        location = Location.objects.all()
+        self.assertEqual(len(location),0)
 
 
 
