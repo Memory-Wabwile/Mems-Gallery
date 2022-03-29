@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% load bootstrap3}
+{% load bootstrap3 %}
 {% load static %}
 {% block content %}
 {{block.super}}
@@ -13,24 +13,19 @@
             “Photography helps people to see.”</em></p>
 
 
-    {%if image%}
-    {{message}}
-
-    {% for image in image %}
-    <div class="container">
-
-        <div style="display: flex; flex-wrap: wrap; flex-direction: row; width: 100%;" class="row">
-            
-            <div class="col-6">
+    
+        <div class="row">
+            {% for image in image %}
+            <div class="col-md-3">
+                
                 <h1 class="text-center"><em>{{image.category}}</em></h1>
                 <img src="{{image.image.url}}" data-toggle="modal" data-target="#{{image.id}}" alt="" class="img-fluid"
-                    id="eachimage" width="500" height="300">
+                    id="eachimage" height="200">
             </div>
 
         </div>
 
-
-    </div>
+   
 
     <div class="modal fade" id="{{image.id}}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
@@ -66,11 +61,6 @@
     </div>
     {% endfor %}
 
-
-    {%else%}
-    <p>No image</p>
-
-    {%endif%}
 
     {%endblock%}
 
