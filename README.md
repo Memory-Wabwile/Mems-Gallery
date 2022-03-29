@@ -9,12 +9,17 @@ Mems Gallery is an application showcasing the different pictures in mem's galler
 
 ## Live Site
 click on https://memsgallery.herokuapp.com/ to view the site
+
 ## BDD
 1. A user is able to view different photos that interest me.
 2. Click on a single photo to expand it and also view the details of the photo. The photo details appear on a modal within the same route as the main page.
 3. A user is able to Search for different categories of photos. (ie. Wildlife, Art, Travel, Food )
 4. A user is able to copy a link to the photo to share with my friends.
 5. A user is able to view photos based on the location they were taken.
+
+## Design
+Landing page design for MemsGallery
+<img src="screenshot.jpeg" alt=""><br>
 
 ## Technologies Used
 <ul>Python 3.9</ul>
